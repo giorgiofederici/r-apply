@@ -28,6 +28,9 @@
     "app-web-e2e": {
       "tags": [],
       "implicitDependencies": ["app-web"]
+    },
+    "shared-environments": {
+      "tags": []
     }
   }
 }
