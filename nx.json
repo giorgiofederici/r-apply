@@ -30,6 +30,9 @@
     },
     "shared-styles": {
       "tags": []
+    },
+    "shared-auth-shell-app-web": {
+      "tags": []
     }
   }
 }

@@ -17,7 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@r-apply/shared/environments": ["libs/shared/environments/src/index.ts"],
-      "@r-apply/shared/styles": ["libs/shared/styles/src/index.ts"]
+      "@r-apply/shared/styles": ["libs/shared/styles/src/index.ts"],
+      "@r-apply/shared/auth/shell-app-web": [
+        "libs/shared/auth/shell-app-web/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
