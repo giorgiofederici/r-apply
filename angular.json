@@ -97,33 +97,6 @@
         }
       }
     },
-    "app-web-e2e": {
-      "root": "apps/app-web-e2e",
-      "sourceRoot": "apps/app-web-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/app-web-e2e/cypress.json",
-            "tsConfig": "apps/app-web-e2e/tsconfig.e2e.json",
-            "devServerTarget": "app-web:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-web:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/app-web-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/app-web-e2e/**/*"]
-          }
-        }
-      }
-    },
     "shared-environments": {
       "projectType": "library",
       "root": "libs/shared/environments",
