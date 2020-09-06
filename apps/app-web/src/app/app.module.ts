@@ -10,6 +10,8 @@ import { SharedUtilsTranslocoConfigModule } from '@r-apply/shared/utils/transloc
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// Custom Material
+import { CommonUiCustomMaterialModule } from '@r-apply/common/ui/custom-material';
 // Shared Env
 import { environment } from '@r-apply/shared/environments';
 // Containers
@@ -42,6 +44,7 @@ const routes: Routes = [
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    CommonUiCustomMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
