@@ -198,6 +198,146 @@
           "style": "scss"
         }
       }
+    },
+    "shared-auth-data-access-auth": {
+      "projectType": "library",
+      "root": "libs/shared/auth/data-access-auth",
+      "sourceRoot": "libs/shared/auth/data-access-auth/src",
+      "prefix": "r-apply",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/auth/data-access-auth/tsconfig.lib.json",
+              "libs/shared/auth/data-access-auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/auth/data-access-auth/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/auth/data-access-auth/jest.config.js",
+            "tsConfig": "libs/shared/auth/data-access-auth/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/auth/data-access-auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-auth-feature-signup": {
+      "projectType": "library",
+      "root": "libs/shared/auth/feature-signup",
+      "sourceRoot": "libs/shared/auth/feature-signup/src",
+      "prefix": "r-apply",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/auth/feature-signup/tsconfig.lib.json",
+              "libs/shared/auth/feature-signup/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/auth/feature-signup/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/auth/feature-signup/jest.config.js",
+            "tsConfig": "libs/shared/auth/feature-signup/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/auth/feature-signup/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "common-ui-custom-material": {
+      "projectType": "library",
+      "root": "libs/common/ui/custom-material",
+      "sourceRoot": "libs/common/ui/custom-material/src",
+      "prefix": "r-apply",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/ui/custom-material/tsconfig.lib.json",
+              "libs/common/ui/custom-material/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/common/ui/custom-material/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/ui/custom-material/jest.config.js",
+            "tsConfig": "libs/common/ui/custom-material/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/common/ui/custom-material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-utils-transloco-config": {
+      "projectType": "library",
+      "root": "libs/shared/utils/transloco-config",
+      "sourceRoot": "libs/shared/utils/transloco-config/src",
+      "prefix": "r-apply",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/utils/transloco-config/tsconfig.lib.json",
+              "libs/shared/utils/transloco-config/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/utils/transloco-config/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/utils/transloco-config/jest.config.js",
+            "tsConfig": "libs/shared/utils/transloco-config/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/utils/transloco-config/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

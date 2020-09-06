@@ -1,0 +1,10 @@
+@import 'main';
+
+.signup-page {
+  margin: 0 auto;
+  width: 300px;
+
+  @include for-tablet-portrait-up {
+    width: 500px;
+  }
+}

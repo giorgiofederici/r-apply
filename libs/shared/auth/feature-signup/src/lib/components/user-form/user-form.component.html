@@ -1,0 +1,100 @@
+<ng-container *transloco="let t">
+  <form novalidate [formGroup]="userFormGroup" (submit)="onSubmit(userFormGroup.value)">
+    <ng-container formGroupName="data">
+      <!-- FIRST NAME -->
+      <mat-form-field class="input-width-100" color="primary">
+        <mat-label>{{ t('authSignup.fields.firstName') }}</mat-label>
+        <input matInput formControlName="firstName" required />
+        <mat-error *ngIf="firstNameControl.invalid && firstNameControl.hasError('required')">
+          {{ t('authSignup.validators.firstNameRequired') }}
+        </mat-error>
+      </mat-form-field>
+      <!-- LAST NAME -->
+      <mat-form-field class="input-width-100 give-me-some-space top margin-25" color="primary">
+        <mat-label>{{ t('authSignup.fields.lastName') }}</mat-label>
+        <input matInput formControlName="lastName" required />
+        <mat-error *ngIf="lastNameControl.invalid && lastNameControl.hasError('required')">
+          {{ t('authSignup.validators.lastNameRequired') }}
+        </mat-error>
+      </mat-form-field>
+      <!-- EMAIL -->
+      <mat-form-field class="input-width-100 give-me-some-space top margin-25" color="primary">
+        <mat-label>{{ t('authSignup.fields.email') }}</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-spinner matSuffix *ngIf="loading" [diameter]="20"></mat-spinner>
+        <mat-error *ngIf="emailControl.invalid && emailControl.hasError('required')">
+          {{ t('authSignup.validators.emailRequired') }}
+        </mat-error>
+        <mat-error *ngIf="emailControl.invalid && emailControl.hasError('email')">
+          {{ t('authSignup.validators.emailInvalid') }}
+        </mat-error>
+        <mat-error *ngIf="emailControl.dirty && emailControl.hasError('emailAlreadyUsed')">
+          {{ t('authSignup.validators.emailAlreadyUsed') }}
+        </mat-error>
+      </mat-form-field>
+      <!-- PASSWORD -->
+      <mat-form-field class="input-width-100 give-me-some-space top margin-25" color="primary">
+        <mat-label>{{ t('authSignup.fields.password') }}</mat-label>
+        <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" required />
+        <button
+          mat-icon-button
+          matSuffix
+          color="primary"
+          type="button"
+          (click)="hidePassword = !hidePassword"
+          attr.aria-label="{{ t('authSignup.hideAndShowPassword') }}"
+          [attr.aria-pressed]="hidePassword"
+          tabindex="-1"
+          title="{{ t('authSignup.hideAndShowPassword') }}"
+        >
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordControl.invalid && passwordControl.hasError('required')">
+          {{ t('authSignup.validators.passwordRequired') }}
+        </mat-error>
+      </mat-form-field>
+      <!-- PASSWORD CONFIRM -->
+      <mat-form-field class="input-width-100 give-me-some-space top margin-25" color="primary">
+        <mat-label>{{ t('authSignup.fields.passwordConfirm') }}</mat-label>
+        <input
+          matInput
+          formControlName="passwordConfirm"
+          [type]="hidePasswordConfirm ? 'password' : 'text'"
+          required
+          [errorStateMatcher]="parentStateMatcher"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          color="primary"
+          type="button"
+          (click)="hidePasswordConfirm = !hidePasswordConfirm"
+          attr.aria-label="{{ t('authSignup.hideAndShowPassword') }}"
+          [attr.aria-pressed]="hidePassword"
+          tabindex="-1"
+          title="{{ t('authSignup.hideAndShowPassword') }}"
+        >
+          <mat-icon>{{ hidePasswordConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordConfirmControl.invalid && passwordConfirmControl.hasError('required')">
+          {{ t('authSignup.validators.passwordConfirmRequired') }}
+        </mat-error>
+        <mat-error *ngIf="passwordNotMatching && dataGroup.hasError('passwordNoMatch')">
+          {{ t('authSignup.validators.passwordsNotMatching') }}
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+
+    <section class="input-width-100 give-me-some-space top margin-50">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="userFormGroup.invalid || !emailCheckIsValid"
+        title="{{ t('authSignup.buttons.titles.review') }}"
+      >
+        {{ t('authSignup.buttons.labels.review') }}
+      </button>
+    </section>
+  </form>
+</ng-container>

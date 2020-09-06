@@ -1,0 +1,29 @@
+<ng-container *transloco="let t">
+  <mat-card class="signup">
+    <ng-container *ngIf="success || error; else form">
+      <!-- FEEDBACK -->
+      <r-apply-signup-feedback [isSuccess]="isSuccess" [message]="feedbackMessage"></r-apply-signup-feedback>
+    </ng-container>
+    <ng-template #form>
+      <mat-card-header class="signup__header-text">
+        <mat-card-title>
+          {{ t('authSignup.title') }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-container *ngIf="!user; else userReview">
+          <!-- FORM -->
+          <r-apply-user-form
+            [emailCheck]="emailCheck"
+            [loading]="loading"
+            (reviewUserEmitter)="onReviewUser($event)"
+          ></r-apply-user-form>
+        </ng-container>
+        <ng-template #userReview>
+          <!-- REVIEW -->
+          <r-apply-user-review [user]="user" (signupUserEmitter)="onSignupUser($event)"></r-apply-user-review>
+        </ng-template>
+      </mat-card-content>
+    </ng-template>
+  </mat-card>
+</ng-container>

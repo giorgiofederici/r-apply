@@ -33,6 +33,18 @@
     },
     "shared-auth-shell-app-web": {
       "tags": []
+    },
+    "shared-auth-data-access-auth": {
+      "tags": []
+    },
+    "shared-auth-feature-signup": {
+      "tags": []
+    },
+    "common-ui-custom-material": {
+      "tags": []
+    },
+    "shared-utils-transloco-config": {
+      "tags": []
     }
   }
 }

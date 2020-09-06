@@ -2,6 +2,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+// Transloco
+import { SharedUtilsTranslocoConfigModule } from '@r-apply/shared/utils/transloco-config';
 // NgRx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -11,10 +15,21 @@ import { environment } from '@r-apply/shared/environments';
 // Containers
 import { AppComponent } from './containers/app/app.component';
 
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('@r-apply/shared/auth/shell-app-web').then((m) => m.SharedAuthShellAppWebModule),
+  },
+];
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    SharedUtilsTranslocoConfigModule.forRoot(environment.production),
     StoreModule.forRoot(
       {},
       {
@@ -27,7 +42,6 @@ import { AppComponent } from './containers/app/app.component';
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

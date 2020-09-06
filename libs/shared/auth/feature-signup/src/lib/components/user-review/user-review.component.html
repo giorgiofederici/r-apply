@@ -1,0 +1,79 @@
+<ng-container *transloco="let t">
+  <div class="user-review">
+    <!-- PROGRESS BAR --->
+    <section *ngIf="loading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </section>
+    <mat-list>
+      <!-- FIRST NAME -->
+      <mat-list-item>
+        <div>
+          <h4 class="text-bold" matLine>{{ user?.data?.firstName }}</h4>
+          <p matLine>
+            <span class="small font-weight-light">{{ t('authSignup.fields.firstName') }}</span>
+          </p>
+        </div>
+      </mat-list-item>
+      <!-- LAST NAME -->
+      <mat-list-item>
+        <div class="user-review__list-item">
+          <h4 class="text-bold" matLine>{{ user?.data?.lastName }}</h4>
+          <p matLine>
+            <span class="small font-weight-light">{{ t('authSignup.fields.lastName') }}</span>
+          </p>
+        </div>
+      </mat-list-item>
+      <!-- EMAIL -->
+      <mat-list-item>
+        <div class="user-review__list-item">
+          <h4 class="text-bold" matLine>{{ user?.data?.email }}</h4>
+          <p matLine>
+            <span class="small font-weight-light">{{ t('authSignup.fields.email') }}</span>
+          </p>
+        </div>
+      </mat-list-item>
+      <!-- PASSWORD -->
+      <mat-list-item>
+        <div class="user-review__list-item">
+          <h4 class="text-bold" matLine>
+            <ng-container *ngIf="!hidePassword; else hiddenPassword">
+              {{ user?.data?.password }}
+            </ng-container>
+            <ng-template #hiddenPassword>
+              {{ t('authSignup.review.secretPassword') }}
+            </ng-template>
+            <button
+              mat-icon-button
+              matSuffix
+              color="primary"
+              type="button"
+              (click)="hidePassword = !hidePassword"
+              attr.aria-label="{{ t('authSignup.hideAndShowPassword') }}"
+              [attr.aria-pressed]="hidePassword"
+              tabindex="-1"
+              title="{{ t('authSignup.hideAndShowPassword') }}"
+            >
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </h4>
+
+          <p matLine>
+            <span class="small font-weight-light">{{ t('authSignup.fields.password') }}</span>
+          </p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <section class="user-review__btn">
+      <button
+        type="button"
+        mat-raised-button
+        color="primary"
+        title="{{ t('authSignup.buttons.titles.signup') }}"
+        (click)="onSignup()"
+      >
+        {{ t('authSignup.buttons.labels.signup') }}
+      </button>
+    </section>
+  </div>
+</ng-container>

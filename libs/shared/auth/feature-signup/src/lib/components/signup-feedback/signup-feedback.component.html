@@ -1,0 +1,11 @@
+<ng-container *transloco="let t">
+  <div class="signup-feedback">
+    <div class="signup-feedback__icon-wrapper" [ngClass]="{ icon__success: isSuccess, icon__failure: !isSuccess }">
+      <mat-icon *ngIf="!isSuccess">close</mat-icon>
+      <mat-icon *ngIf="isSuccess">check</mat-icon>
+    </div>
+    <p class="signup-feedback__message text-bold" [ngClass]="{ success: isSuccess, failure: !isSuccess }">
+      {{ message }}
+    </p>
+  </div>
+</ng-container>

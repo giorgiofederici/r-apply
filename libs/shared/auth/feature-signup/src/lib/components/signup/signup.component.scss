@@ -1,0 +1,16 @@
+@import 'main';
+
+.signup {
+  &__header-text {
+    color: map-get($app, blue--light);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+mat-card {
+  padding: 2rem 3rem;
+}

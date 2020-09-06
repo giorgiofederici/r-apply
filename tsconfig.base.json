@@ -20,6 +20,18 @@
       "@r-apply/shared/styles": ["libs/shared/styles/src/index.ts"],
       "@r-apply/shared/auth/shell-app-web": [
         "libs/shared/auth/shell-app-web/src/index.ts"
+      ],
+      "@r-apply/shared/auth/data-access-auth": [
+        "libs/shared/auth/data-access-auth/src/index.ts"
+      ],
+      "@r-apply/shared/auth/feature-signup": [
+        "libs/shared/auth/feature-signup/src/index.ts"
+      ],
+      "@r-apply/common/ui/custom-material": [
+        "libs/common/ui/custom-material/src/index.ts"
+      ],
+      "@r-apply/shared/utils/transloco-config": [
+        "libs/shared/utils/transloco-config/src/index.ts"
       ]
     }
   },

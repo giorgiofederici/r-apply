@@ -1,0 +1,16 @@
+@import 'main';
+
+.user-review {
+  &__list-item {
+    margin-top: 25px;
+  }
+
+  &__btn {
+    margin-top: 50px;
+  }
+}
+
+.text-caption {
+  font-size: 14px;
+  font-weight: lighter;
+}

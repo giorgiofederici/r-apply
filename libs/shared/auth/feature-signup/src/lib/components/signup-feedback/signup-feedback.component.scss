@@ -1,0 +1,48 @@
+@import 'main';
+
+:host {
+  text-align: center;
+}
+
+.signup-feedback {
+  &__icon-wrapper {
+    border-radius: 50%;
+    color: map-get($app, white);
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+
+    .mat-icon {
+      transform: scale(4);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__message {
+    color: map-get($states, error);
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.icon__success {
+  background-color: map-get($states, success);
+}
+
+.success {
+  color: map-get($states, success);
+}
+
+.icon__failure {
+  background-color: map-get($states, error);
+}
+
+.failure {
+  color: map-get($states, error);
+}

@@ -1,0 +1,11 @@
+<div class="signup-page">
+  <r-apply-signup
+    [loading]="loading$ | async"
+    [error]="error$ | async"
+    [success]="success$ | async"
+    [user]="user$ | async"
+    [emailCheck]="emailCheck$ | async"
+    (reviewUserEmitter)="onReviewUser($event)"
+    (signupUserEmitter)="onSignupUser($event)"
+  ></r-apply-signup>
+</div>

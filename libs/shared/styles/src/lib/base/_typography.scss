@@ -1,31 +1,15 @@
 .small {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .text-bold {
-    font-weight: 700;
+  font-weight: 500;
 }
 
 .font-weight-light {
-    font-weight: 300;
-}
-
-.text-italic {
-    font-style: italic;
-}
-
-.text-white {
-    color: map-get($website, white);
-}
-
-.text-ruby {
-    color: map-get($website, ruby);
-}
-
-.text-09 {
-    font-size: 0.9rem;
+  font-weight: 300;
 }
